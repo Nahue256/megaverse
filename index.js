@@ -47,10 +47,10 @@ const deleteMegaverse = async () =>{
     console.log("Megaverse deleted successfully!");
     process.exit(0);
 }
-rl.question("Create or delete megaverse:  ", async(action) => {
+rl.question("Create or delete megaverse:  ", (action) => {
     console.log(action);
-    if (action.toLowerCase() === "create") await createMegaverse()
-    if (action.toLowerCase() === "delete") await deleteMegaverse()
+    if (action.toLowerCase() === "create") createMegaverse()
+    if (action.toLowerCase() === "delete") deleteMegaverse()
     if (action.toLowerCase() !== "create" || action.toLowerCase() === "delete"){
         console.log("Wrong Input")
         process.exit(0);
