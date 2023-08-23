@@ -33,9 +33,9 @@ export const createCometh = async (cometh,row,column) => {
     console.log("Cometh created!");
 }
 
-export const deleteCometh = (row,column) =>{
+export const deleteCometh = async (row,column) =>{
     console.log("Deleting Cometh in row: ", row,"column: ", column);
-    axios.delete(url,{data : getParamsDelete(row,column)}, {headers, params: {candidateId}})
+    await axios.delete(url,{data : getParamsDelete(row,column)}, {headers, params: {candidateId}})
     .catch(function (error) {
         console.log(error);
     });

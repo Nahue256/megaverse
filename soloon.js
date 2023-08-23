@@ -33,9 +33,9 @@ export const createSoloon = async (soloon,row,column) => {
     console.log("Soloon created!");
 }
 
-export const deleteSoloon = (row,column) =>{
+export const deleteSoloon = async (row,column) =>{
     console.log("Deleting Soloon in row: ", row,"column: ", column);
-    axios.delete(url,{data : getParamsDelete(row,column)}, {headers, params: {candidateId}})
+    await axios.delete(url,{data : getParamsDelete(row,column)}, {headers, params: {candidateId}})
     .catch(function (error) {
         console.log(error);
     });

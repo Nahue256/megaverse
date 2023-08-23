@@ -23,9 +23,9 @@ export const createPolyanet = async (row,column) => {
     console.log("Polyanet created!");
 }
 
-export const deletePolyanets = (row,column) =>{
+export const deletePolyanets = async (row,column) =>{
     console.log("Deleting Polyanet in row: ", row,"column: ", column);
-    axios.delete(url,{data : getParams(row,column)}, {headers, params: {candidateId}})
+    await axios.delete(url,{data : getParams(row,column)}, {headers, params: {candidateId}})
     .catch(function (error) {
         console.log(error);
     });
